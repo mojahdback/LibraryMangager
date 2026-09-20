@@ -11,13 +11,39 @@ function menu(){
   console.log("\t0. Exit\n")
 
 }
-  menu();
 
-  let choix = p("Choose an option: ");
+
+function add(){
+
+  let boxLibry = {} 
+  let id = Number(p("Enter ID of book : "));
+  let title = p("Enter title of book : ");
+  let author = p("Enter author :");
+  let category = p("Enter category : ");
+  let pubYear = Number(p("Enter Publication Year : "));
+  let status = p("what is status of book => AVAILABLE or => BORROWED : ");
+  Libry.push(
+     boxLibry = {
+     id : id ,
+     title : title,
+     author : author ,
+     category : category ,
+     pubYear : pubYear,
+     status : status
+  })
+
+
+}
+  
+  let Libry = [];
+ let choix ;
+  do{
+    menu();
+    choix = Number(p("Choose an option: "));
 
   switch(choix){
-    case 1 : 
-            break;
+    case 1 : add();
+             break;
     case 2 : 
             break ;
     case 3 : 
@@ -32,3 +58,6 @@ function menu(){
             break ;
    
   }
+
+  }while(choix !== 0);
+ 
