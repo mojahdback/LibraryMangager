@@ -1,5 +1,8 @@
 const p = require("prompt-sync")();
 
+let Libry = [];
+ let choix ;
+
 function menu(){
   console.log("\n ========== Library Manager ==========\n")  
   console.log("\t1. Add Book")
@@ -34,9 +37,22 @@ function add(){
 
 
 }
+
+function display(){
+
+      
+        for(let i =0 ; i < Libry.length ; i++){
+                console.log(`============ BOOK ${i+1} =============`);
+                console.log(Libry[i]);
+                console.log("==================\n");
+
+        }
+
+ 
+
+}
   
-  let Libry = [];
- let choix ;
+
   do{
     menu();
     choix = Number(p("Choose an option: "));
@@ -44,7 +60,7 @@ function add(){
   switch(choix){
     case 1 : add();
              break;
-    case 2 : 
+    case 2 : display();
             break ;
     case 3 : 
             break ;
