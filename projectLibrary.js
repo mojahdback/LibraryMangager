@@ -40,7 +40,6 @@ function add(){
 
 function display(){
 
-      
         for(let i =0 ; i < Libry.length ; i++){
                 console.log(`============ BOOK ${i+1} =============`);
                 console.log(Libry[i]);
@@ -51,7 +50,35 @@ function display(){
  
 
 }
-  
+
+
+function recherch(Libry) {
+    let id = Number(p("Recherch par ID : "));
+    let verfi = 0;
+
+    Libry.forEach(book => {
+
+        if (book.id == id) {
+            console.log("============= Found it ============");
+
+            console.log(`\t title => ${book.title}`);
+            console.log(`\t author => ${book.author}`);
+            console.log(`\t category => ${book.category}`);
+            console.log(`\t pubYear => ${book.pubYear}`);
+            console.log(`\t status => ${book.status}`);
+
+            console.log("________________________\n");
+
+            verfi = 1;
+        }
+    });
+
+    if (verfi == 0) {
+        console.log("\n===========================\n");
+        console.log(`\tThe libry dosn't have any book has this ID => ${id} `);
+        console.log("===========================\n");
+    }
+}
 
   do{
     menu();
@@ -59,11 +86,17 @@ function display(){
 
   switch(choix){
     case 1 : add();
+             p("Click to Move...!")
+             console.clear()
              break;
     case 2 : display();
-            break ;
-    case 3 : 
-            break ;
+             p("Click to Move...!")
+             console.clear()
+             break ;
+    case 3 : recherch(Libry);
+             p("Click to Move...!")
+             console.clear()
+             break ;
     case 4 : 
             break;
     case 5 : 
